@@ -8,6 +8,7 @@ import NotFound from "./Pages/PageNotFound";
 import Profile from "./Pages/Profile";
 import Navbar from './Component/Navbar';
 import Logout from "./Component/Logout"
+import Newpage from './Pages/Newpage';
 import { useEffect, useState } from 'react';
 import api from "./Api";
 
@@ -42,6 +43,7 @@ function App() {
       <Routes>
         <Route path="/" element={token? <Navigate to="/dashboard" /> : <Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/newpage" element={<Newpage />} />
         <Route path="/dashboard" element={token? getDashboardComponent() : <Navigate to="/" />} />
         <Route path="/profile" element={token ? <Profile /> : <Navigate to="/" />} />
         <Route path="/logout" element={token ? <Logout /> : <Navigate to="/" />} />
